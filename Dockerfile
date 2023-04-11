@@ -1,4 +1,4 @@
-FROM ubuntu:18:04
+FROM ubuntu:18.04
 
 ENV PGDATA="/etc/postgresql/13/main"
 
