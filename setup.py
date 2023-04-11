@@ -1,9 +1,9 @@
 from distutils.core import setup
 
 setup(
-  name='mailchimpfdw',
-  version='0.3.1',
-  author='Damien Clochard',
+  name='cloudsmith_fdw',
+  version='0.0.1',
+  author='Richard Yen',
   license='Postgresql',
-  packages=['mailchimpfdw']
+  packages=['cloudsmith_fdw']
 )
