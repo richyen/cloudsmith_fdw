@@ -1,6 +1,6 @@
 FROM ubuntu:18:04
 
-export PGDATA="/etc/postgresql/13/main"
+ENV PGDATA="/etc/postgresql/13/main"
 
 RUN apt -y update && \
     apt -y install curl gpg gnupg2 software-properties-common apt-transport-https lsb-release ca-certificates && \
