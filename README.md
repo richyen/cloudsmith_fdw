@@ -1,50 +1,45 @@
-# mailchimp_fdw
-A PostgreSQL Foreign Data Wrapper for [MailChimp](https://mailchimp.com/)
-
-
-
+# cloudsmith_fdw
+A PostgreSQL Foreign Data Wrapper for [cloudsmith](https://cloudsmith.io/)
 
 ## INSTALL
-
-Assuming your using debian and the apt.postgresql.org repositories.
+Assuming you're using ubuntu and the apt.postgresql.org repositories:
 
 ```
-sudo apt-get install postgresql-9.5-python3-multicorn python3-setuptools
-sudo easy_install3 pip
-sudo pip-3.2 install mailchimp
-git clone  https://github.com/daamien/mailchimp_fdw
-cd mailchimp_fdw
+sudo apt install python3-multicorn python3-setuptools
+git clone  https://github.com/richyen/cloudsmith_fdw
+cd cloudsmith_fdw
 sudo python3 setup.py install
 sudo service postgresql restart
 ```
 
-
-
-
 ## USE
 
 ```sql
+CREATE SCHEMA cloudsmith;
 CREATE EXTENSION multicorn;
 
-CREATE SERVER mailchimp_fdw
+CREATE SERVER cloudsmith_fdw
 FOREIGN DATA WRAPPER multicorn
 options (
-  wrapper 'mailchimpfdw.MailchimpFDW'
+  wrapper 'cloudsmith_fdw.cloudsmithFDW'
 );
 
 
-CREATE FOREIGN TABLE members (
-        id TEXT,
-        email TEXT,
-        email_type TEXT,
-        merges  TEXT,
-        status  TEXT
-) server mailchimp_fdw options (
-   key 'your_mailchimp_api_key',
-   list_name 'your_mailchimp_mailing_list'
+CREATE FOREIGN TABLE cloudsmith.packages (
+        self_url TEXT,
+        stage TEXT,
+        status TEXT,
+        sync_progress TEXT,
+        downloads TEXT,
+        extension TEXT,
+        filename TEXT,
+        "size" TEXT,
+        repository TEXT,
+        summary TEXT,
+        version TEXT,
+) server cloudsmith_fdw options (
+   key 'your_secret_api_key'
 );
 
-SELECT * from members;
-
-
+SELECT * from cloudsmith.packages;
 ```
