@@ -41,5 +41,5 @@ CREATE FOREIGN TABLE cloudsmith.packages (
    key 'your_secret_api_key'
 );
 
-SELECT * from cloudsmith.packages;
+SELECT * FROM cloudsmith.packages;
 ```
