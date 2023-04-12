@@ -1,0 +1,11 @@
+version: '3'
+services:
+  multicorn:
+    image: multicorn:latest
+    container_name: pg
+    hostname: pg
+    environment:
+      - PGMAJOR=13
+    volumes:
+      - ./:/cloudsmith_fdw
+    entrypoint: /cloudsmith_fdw/entrypoint.sh
