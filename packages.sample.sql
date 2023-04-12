@@ -23,7 +23,7 @@ CREATE FOREIGN TABLE cloudsmith.packages (
         "size" TEXT,
         repository TEXT,
         summary TEXT,
-        version TEXT,
+        version TEXT
 ) server cloudsmith_fdw options (
    key 'your_secret_api_key'
 );
