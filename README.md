@@ -21,7 +21,7 @@ CREATE EXTENSION multicorn;
 CREATE SERVER cloudsmith_fdw
 FOREIGN DATA WRAPPER multicorn
 options (
-  wrapper 'cloudsmith_fdw.cloudsmithFDW'
+  wrapper 'cloudsmith_fdw.CloudsmithFDW'
 );
 
 
@@ -36,7 +36,7 @@ CREATE FOREIGN TABLE cloudsmith.packages (
         "size" TEXT,
         repository TEXT,
         summary TEXT,
-        version TEXT,
+        version TEXT
 ) server cloudsmith_fdw options (
    key 'your_secret_api_key'
 );
