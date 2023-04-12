@@ -3,7 +3,7 @@ A PostgreSQL Foreign Data Wrapper for [cloudsmith](https://cloudsmith.io/)
 
 ## INSTALL
 ```
-## Install multicorn in accordance with docs
+## Install multicorn in accordance with docs before perfoming the below:
 git clone https://github.com/richyen/cloudsmith_fdw
 cd cloudsmith_fdw
 sudo python3 setup.py install
