@@ -2,14 +2,11 @@
 A PostgreSQL Foreign Data Wrapper for [cloudsmith](https://cloudsmith.io/)
 
 ## INSTALL
-Assuming you're using ubuntu and the apt.postgresql.org repositories:
-
 ```
-sudo apt install python3-multicorn python3-setuptools
-git clone  https://github.com/richyen/cloudsmith_fdw
+## Install multicorn in accordance with docs
+git clone https://github.com/richyen/cloudsmith_fdw
 cd cloudsmith_fdw
 sudo python3 setup.py install
-sudo service postgresql restart
 ```
 
 ## USE
