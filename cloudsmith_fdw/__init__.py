@@ -5,6 +5,7 @@
 from multicorn import ForeignDataWrapper
 from multicorn.utils import log_to_postgres
 import requests
+import json
 
 
 class CloudsmithFDW(ForeignDataWrapper):
@@ -29,7 +30,7 @@ class CloudsmithFDW(ForeignDataWrapper):
 
         response = requests.get(url, headers=headers)
 
-        return response.text
+        return json.loads(response.text)
 
     def execute(self, quals, columns):
         for item in self.fetch():
