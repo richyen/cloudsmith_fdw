@@ -6,6 +6,7 @@ services:
     hostname: pg
     environment:
       - PGMAJOR=13
+      - CLOUDSMITH_TOKEN=${CLOUDSMITH_TOKEN}
     volumes:
       - ./:/cloudsmith_fdw
     entrypoint: /cloudsmith_fdw/entrypoint.sh
