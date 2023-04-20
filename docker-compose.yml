@@ -1,9 +1,10 @@
 version: '3'
 services:
   multicorn:
+    build: ./
     image: multicorn:latest
-    container_name: pg
-    hostname: pg
+    container_name: multicorn
+    hostname: multicorn
     environment:
       - PGMAJOR=13
       - CLOUDSMITH_TOKEN=${CLOUDSMITH_TOKEN}
