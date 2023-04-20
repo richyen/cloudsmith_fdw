@@ -18,7 +18,7 @@ CREATE EXTENSION multicorn;
 CREATE SERVER cloudsmith_fdw
 FOREIGN DATA WRAPPER multicorn
 options (
-  wrapper 'cloudsmith_fdw.CloudsmithFDW'
+  wrapper 'cloudsmith_fdw.CloudsmithPackageFDW'
 );
 
 
