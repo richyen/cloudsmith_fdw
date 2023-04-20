@@ -12,6 +12,7 @@ CREATE SCHEMA IF NOT EXISTS cloudsmith;
 -- the complete list of fields is available here
 -- https://help.cloudsmith.io/reference/packages_list
 --
+-- stage, status, sync_progress, downloads, size seem to cause issues with python 3.6 on CentOS 7
 CREATE FOREIGN TABLE cloudsmith.packages (
         self_url TEXT,
         stage TEXT,
