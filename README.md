@@ -12,8 +12,8 @@ sudo python3 setup.py install
 ## USE
 
 ```sql
-CREATE SCHEMA cloudsmith;
 CREATE EXTENSION multicorn;
+CREATE SCHEMA cloudsmith;
 
 CREATE SERVER cloudsmith_fdw
 FOREIGN DATA WRAPPER multicorn
